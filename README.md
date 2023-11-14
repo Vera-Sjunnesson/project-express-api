@@ -1,6 +1,6 @@
 # Project Express API
 
-To create an expree API
+To create an express API
 
 ## The problem
 
