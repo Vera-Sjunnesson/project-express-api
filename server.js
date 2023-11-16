@@ -73,11 +73,11 @@ app.get("/nationality/:nationality", (req, res) => {
 
 app.get("/born-after/:year", (req, res) => {
   const year = req.params.year;
-  const { nationality } = req.query;
-  let artistsBornAfter = artistsMoma.filter((artist) => artist.Birth_Year > year )
-  if (nationality) {
+  const { gender } = req.query;
+  let artistsBornAfter = artistsMoma.filter((artist) => artist.Birth_Year > year)
+  if (gender) {
     artistsBornAfter = artistsBornAfter.filter((artist) => {
-      return artist.Nationality.toLowerCase() === nationality.toLowerCase();
+      return artist.Gender.toLowerCase() === gender.toLowerCase();
     });
   } 
   if (year) {
@@ -120,7 +120,7 @@ app.get("/artists/:id", (req, res) => {
   }
 });
 
-app.get("/artists/name/:name", (req, res) => {
+app.get("/:name", (req, res) => {
   const { name } = req.params
   console.log("The name parameter is:", name);
   const singleArtistName = artistsMoma.find((artist) => {
