@@ -120,7 +120,7 @@ app.get("/artists/:id", (req, res) => {
   }
 });
 
-app.get("/:name", (req, res) => {
+app.get("/artist/:name", (req, res) => {
   const { name } = req.params
   console.log("The name parameter is:", name);
   const singleArtistName = artistsMoma.find((artist) => {
